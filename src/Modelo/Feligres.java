@@ -102,12 +102,13 @@ public class Feligres {
     }
     
     public String est(){
-        if(this.estado){
+        if(this.estado==true){
             return "deudor";
         }else if(this.estado==false)return "Cumplido";
         else
         
         return "estado no valido";
     }
+  
     
 }

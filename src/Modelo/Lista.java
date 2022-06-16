@@ -114,4 +114,7 @@ public class Lista extends Feligres {
             }
         }
     }
+                public void Eliminar(){
+                 feligreses.removeAll( feligreses);
+                }
 }

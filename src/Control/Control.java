@@ -38,22 +38,25 @@ public class Control implements ActionListener {
     }
 
     private void actionListener(ActionListener Control) {
-        System.out.println("recibido boton 1");
+        v.areaResultados.setText("recibido boton 1");
         v.btnGuardar.addActionListener(Control);
         System.out.println("recibiendo boton 2");
         v.btnActualizar.addActionListener(Control);
-        System.out.println("recibiendo boton 3");
+    v.areaResultados.setText("recibiendo boton 3");
         v.btnBuscar.addActionListener(Control);
-        System.out.println("recibiendo boton 4");
-        v.btnEliminar.addActionListener(Control);
-        System.out.println("recibiendo boton 5");
+   v.areaResultados.setText("recibiendo boton 4");
+        v.btnLimpiar.addActionListener(Control);
+   v.areaResultados.setText("recibiendo boton 5");
         v.btnConsultar.addActionListener(Control);
-        System.out.println("recibiendo boton 6");
+    v.areaResultados.setText("recibiendo boton 6");
         v.btnPagar.addActionListener(Control);
-        System.out.println("recibiendo boton 7");
+   v.areaResultados.setText("recibiendo boton 7");
         v.btnTotalizar.addActionListener(Control);
+v.areaResultados.setText("recibiendo boton 8");
+        v.btnEliminar.addActionListener(Control);
+        
     }
-
+       
     @Override
     public void actionPerformed(ActionEvent evento) {
 
@@ -64,19 +67,12 @@ public class Control implements ActionListener {
             } else if (v.txtEstado.getText().equalsIgnoreCase("pago")) {
                 estado = false;
             } else {
-                System.out.println("estado no valido");
+                v.areaResultados.setText("estado no valido");
             }
             
         if (evento.getActionCommand().equals("Guardar")) {
-            System.out.println("se guardaron datos");
-//otra forma de guardar los datos
-//                f.setCedula(v.txtCedula.getText());
-//                f.setNombre(v.txtNombre.getText());
-//                f.setDireccion(v.txtDireccion.getText());
-//                f.setEstrato(Integer.parseInt(v.txtEstrato.getText()));
-//                f.setTelefono(v.txtTelefono.getText());
-//                f.setEstado(v.txtEstado.getText());
-            
+          v.areaResultados.setText("se guardaron datos");
+                
             
 
             l.agregarFeligres(v.txtCedula.getText(), v.txtNombre.getText(), v.txtDireccion.getText(),
@@ -85,7 +81,7 @@ public class Control implements ActionListener {
         } else if (evento.getActionCommand().equals("Buscar")) {
             System.out.println("boton Buscar");
             v.areaResultados.setText(String.valueOf(l.mostrarDatosFeligres(ConsultaCC)));
-        } else if (evento.getActionCommand().equals("Eliminar")) {
+        } else if (evento.getActionCommand().equals("Limpiar")) {
             //se limpian los JTextfield
             v.txtCedula.setText("");
             v.txtNombre.setText("");
@@ -93,6 +89,7 @@ public class Control implements ActionListener {
             v.txtEstrato.setText("");
             v.txtEstado.setText("");
             v.txtDireccion.setText("");
+          
         } else if (evento.getActionCommand().equals("Actualizar")) {
             JOptionPane.showMessageDialog(null, "si cancela en alguno de los campos no se actualizara con exito los datos del feligres");
             String ccACT = JOptionPane.showInputDialog("Digite la Cedula del feligres que desea actualizar");
@@ -119,6 +116,13 @@ public class Control implements ActionListener {
             v.areaResultados.setText(String.valueOf(l.totalizarDiezmo()));
 
         }
+        else if((evento.getActionCommand().equals("Eliminar"))){
+        l.Eliminar();
+          v.areaResultados.setText(String.valueOf(l.mostrarDatosFeligres(null)));
+           
+        }
+       
     }
 
 }
+

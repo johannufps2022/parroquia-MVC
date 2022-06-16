@@ -42,7 +42,7 @@ public class Vista extends javax.swing.JFrame {
         txtEstrato = new javax.swing.JTextField();
         txtEstado = new javax.swing.JTextField();
         btnGuardar = new javax.swing.JButton();
-        btnEliminar = new javax.swing.JButton();
+        btnLimpiar = new javax.swing.JButton();
         btnActualizar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
@@ -55,6 +55,7 @@ public class Vista extends javax.swing.JFrame {
         btnConsultar = new javax.swing.JButton();
         btnPagar = new javax.swing.JButton();
         btnTotalizar = new javax.swing.JButton();
+        btnEliminar = new javax.swing.JButton();
         panel3 = new java.awt.Panel();
         jScrollPane1 = new javax.swing.JScrollPane();
         areaResultados = new javax.swing.JTextArea();
@@ -81,7 +82,12 @@ public class Vista extends javax.swing.JFrame {
         btnGuardar.setText("Guardar");
         btnGuardar.setToolTipText("");
 
-        btnEliminar.setText("Eliminar");
+        btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         btnActualizar.setText("Actualizar");
 
@@ -103,7 +109,7 @@ public class Vista extends javax.swing.JFrame {
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addComponent(btnGuardar)
                         .addGap(18, 18, 18)
-                        .addComponent(btnEliminar))
+                        .addComponent(btnLimpiar))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addComponent(btnActualizar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -161,7 +167,7 @@ public class Vista extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnGuardar)
-                    .addComponent(btnEliminar))
+                    .addComponent(btnLimpiar))
                 .addGap(27, 27, 27)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnActualizar)
@@ -198,6 +204,8 @@ public class Vista extends javax.swing.JFrame {
 
         btnTotalizar.setText("Totalizar");
 
+        btnEliminar.setText("Eliminar");
+
         javax.swing.GroupLayout panel2Layout = new javax.swing.GroupLayout(panel2);
         panel2.setLayout(panel2Layout);
         panel2Layout.setHorizontalGroup(
@@ -210,18 +218,20 @@ public class Vista extends javax.swing.JFrame {
                         .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblDCedula)
                             .addComponent(lbDValorDiezmo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                         .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtDValorDiezmo)
                             .addComponent(txtDCedula, javax.swing.GroupLayout.DEFAULT_SIZE, 110, Short.MAX_VALUE)))
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
-                        .addComponent(btnConsultar)
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btnConsultar)
+                            .addComponent(btnEliminar))
                         .addGap(34, 34, 34)
-                        .addComponent(btnPagar))
-                    .addGroup(panel2Layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(btnTotalizar)))
+                        .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnTotalizar)
+                            .addComponent(btnPagar))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         panel2Layout.setVerticalGroup(
@@ -242,7 +252,9 @@ public class Vista extends javax.swing.JFrame {
                     .addComponent(btnConsultar)
                     .addComponent(btnPagar))
                 .addGap(18, 18, 18)
-                .addComponent(btnTotalizar)
+                .addGroup(panel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnTotalizar)
+                    .addComponent(btnEliminar))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
@@ -317,6 +329,10 @@ public class Vista extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnConsultarActionPerformed
 
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -359,6 +375,7 @@ public class Vista extends javax.swing.JFrame {
     public javax.swing.JButton btnConsultar;
     public javax.swing.JButton btnEliminar;
     public javax.swing.JButton btnGuardar;
+    public javax.swing.JButton btnLimpiar;
     public javax.swing.JButton btnPagar;
     public javax.swing.JButton btnTotalizar;
     private javax.swing.JScrollBar jScrollBar2;
